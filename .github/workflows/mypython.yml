@@ -26,4 +26,6 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Run Python script
+        env:
+          MYPASS: ${{ secrets.MYPASS }}
         run: python test.py
